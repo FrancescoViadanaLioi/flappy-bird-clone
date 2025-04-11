@@ -11,14 +11,16 @@ config_version=5
 [application]
 
 config/name="FlappyBird"
+run/main_scene="uid://edhtoyvd5g4g"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=576
+window/stretch/mode="viewport"
 
 [dotnet]
 
 project/assembly_name="FlappyBird"
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

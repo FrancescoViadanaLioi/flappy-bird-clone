@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://edhtoyvd5g4g"]
+[gd_scene load_steps=4 format=3 uid="uid://edhtoyvd5g4g"]
 
-[ext_resource type="Texture2D" uid="uid://fwihew8e4g22" path="res://bluebird-downflap.png" id="1_wtcfe"]
-[ext_resource type="Script" uid="uid://dsdbv08d1x7h" path="res://BluebirdDownflap.cs" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://dg4ujq2xepuso" path="res://scripts/Player.cs" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://be14v6bc0x0en" path="res://FlappyBirdAssets/FlappyBirdAssets/Imagens/bluebird-midflap.png" id="2_epypp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hol4"]
+radius = 17.0
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Bluebird-downflap" type="Sprite2D" parent="."]
-position = Vector2(557, 306)
-texture = ExtResource("1_wtcfe")
-script = ExtResource("2_0e48y")
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+script = ExtResource("1_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/CollisionShape2D"]
+texture_filter = 1
+texture = ExtResource("2_epypp")
